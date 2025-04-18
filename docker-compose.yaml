@@ -5,39 +5,39 @@ services:
     tty: true
     networks:
       alt-net:
-        ipv4_address: 172.20.0.10
+        ipv4_address: 10.20.0.10
 
   webserver:
     build: ./target1
     container_name: apacheserver
     networks:
       alt-net:
-        ipv4_address: 172.20.0.67
+        ipv4_address: 10.20.0.67
 
   ftpserver:
     build: ./target2
     container_name: ftpserver
     networks:
       alt-net:
-        ipv4_address: 172.20.0.74
+        ipv4_address: 10.20.0.74
 
   smbserver:
     build: ./target3
     container_name: smbserver
     networks:
       alt-net:
-        ipv4_address: 172.20.0.80
+        ipv4_address: 10.20.0.80
 
   sshserver:
     build: ./target4
     container_name: sshserver
     networks:
       alt-net:
-        ipv4_address: 172.20.0.96
+        ipv4_address: 10.20.0.96
 
 networks:
   alt-net: 
     driver: bridge
     ipam:
       config:
-        - subnet: 172.20.0.0/24
+        - subnet: 10.20.0.0/24
